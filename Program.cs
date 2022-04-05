@@ -11,13 +11,25 @@ namespace Java_to_CSharp_Exercise
         {
             outFile = new FileOutput("animals.txt");
 
-            ArrayList zoo = new ArrayList();
+            /*ArrayList zoo = new ArrayList();
 
             zoo.Add(new Dog(true, "bean"));
             zoo.Add(new Cat(9, "Charlie"));
             zoo.Add(new Teacher(44, "Stacy Read"));
 
-            foreach (ITalkable thing in zoo) { PrintOut(thing); }
+            foreach (ITalkable thing in zoo) { PrintOut(thing); }*/
+
+            bool running = true;
+            while (running) {
+                ITalkable animal = ZooManager.PromptAnimal();
+                if (animal != null) {
+                    ZooManager.Add(animal);
+                    PrintOut(animal);
+                }
+
+                Console.Write("\nAdd another animal? (y/n) > ");
+                if (Console.ReadLine() != "y") { running = false; }
+            }
 
             outFile.FileClose();
 
