@@ -6,20 +6,16 @@ namespace Java_to_CSharp_Exercise
 {
     class ZooManager
     {
-        //private static Dictionary<string, Type> CLASS_MAP = new Dictionary<string, Type> {
-        //    { "Cat", Cat.Type; }
-        //};
-
-        private static List<ITalkable> zoo = new List<ITalkable>();
+        private static List<ITalkable> _zoo = new List<ITalkable>();
 
         public static ITalkable Add(ITalkable animal) {
-            zoo.Add(animal);
+            _zoo.Add(animal);
             return animal;
         }
-        public static bool Remove(ITalkable animal) { return zoo.Remove(animal); }
+        public static bool Remove(ITalkable animal) { return _zoo.Remove(animal); }
         public static bool Remove(int index) {
             try {
-                zoo.RemoveAt(index);
+                _zoo.RemoveAt(index);
                 return true;
             }
             catch { return false; }

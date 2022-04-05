@@ -2,17 +2,17 @@
 {
     class Dog : Pet, ITalkable
     {
-        private bool friendly;
+        private bool _friendly;
         public Dog(bool friendly, string name) : base(name) {
-            this.friendly = friendly;
+            _friendly = friendly;
         }
 
-        public bool IsFriendly() { return friendly; }
+        public bool IsFriendly() { return _friendly; }
 
         public string Talk() { return "Bark"; }
         public override string ToString()
         {
-            return $"Dog: name={name} friendly={friendly}";
+            return $"Dog: name={name} friendly={_friendly}";
         }
     }
 }

@@ -2,14 +2,14 @@
 {
     class Teacher : Person, ITalkable
     {
-        private int age;
+        private int _age;
         public Teacher(int age, string name) {
-            this.age = age;
+            SetAge(age);
             SetName(name);
         }
 
-        public int GetAge() { return age; }
-        public void SetAge(int age) { this.age = age; }
+        public int GetAge() { return _age; }
+        public void SetAge(int age) { _age = age; }
         public string Talk() { return "Don't forget to do the assigned reading!"; }
     }
 }

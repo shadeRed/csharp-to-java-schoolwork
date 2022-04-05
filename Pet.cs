@@ -5,6 +5,6 @@
         protected string name;
 
         public Pet(string name) { this.name = name; }
-        public string GetName() { return this.name; }
+        public string GetName() { return name; }
     }
 }
